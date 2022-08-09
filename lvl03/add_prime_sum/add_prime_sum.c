@@ -6,7 +6,7 @@
 /*   By: osarihan <osarihan@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 00:00:02 by osarihan          #+#    #+#             */
-/*   Updated: 2022/08/09 12:04:52 by osarihan         ###   ########.fr       */
+/*   Updated: 2022/08/09 12:28:22 by osarihan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,22 @@ int ft_atoi(char *av)
 	return(total * res);
 }
 
+void	ft_putnbr(int nbr)
+{
+	char tmp;
+
+	if (nbr > 9)
+	{
+		ft_putnbr(nbr / 10);
+		ft_putnbr(nbr % 10);
+	}
+	else
+	{
+		tmp = nbr + 48;
+		write(1, &tmp, 1);
+	}
+}
+
 int main(int ac, char **av)
 {
 	int i;
@@ -64,13 +80,15 @@ int main(int ac, char **av)
 	i = 0;
 	count = 0;
 	nbr = ft_atoi(&av[1][i]);
-	while(nbr >= 0)
+	while(nbr > 0)
 	{
 		if (is_prime(prm) == 1)
 		{
 			count += prm;
 		}
 		prm++;
+		nbr--;
 	}
-	return (prm);
+	ft_putnbr(count);
+	write(1, "\n", 1);
 }
