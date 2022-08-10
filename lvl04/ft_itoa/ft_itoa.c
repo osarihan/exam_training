@@ -22,7 +22,6 @@ The function returns the result in a char array that you must allocate.
 Your function must be declared as follows:
 
 char	*ft_itoa(int nbr);
-
 */
 
 #include <stdio.h>
@@ -36,10 +35,9 @@ int len_count(int number)
 
 	nbr = number;
 	count = 0;
-	if (number < 0)
+	if (nbr < 0)
 	{
-		number = number * -1;
-		count++;
+		nbr = nbr * -1;
 	}
 	while(nbr > 0)
 	{
@@ -81,13 +79,17 @@ char	*ft_itoa(int nbr)
 	unsigned int len;
 	len = len_count(nbr);
 	str = malloc(sizeof(char *) * len);
+	if (nbr == -2147483648)
+	{
+		str = "-2147483648";
+		return(str);
+	}
 	if (nbr < 0)
 	{
 		nbr = nbr * -1;
 		str[i] = '-';
 		i++;
 	}
-	printf("len:%d\n", len);
 	while (len)
 	{
 		str[i] = (find_bas(nbr, len) + 48);
@@ -96,7 +98,6 @@ char	*ft_itoa(int nbr)
 		len--;
 	}
 	str[i] = '\0';
-	printf("%s\n", str);
 	return(str);
 }
 
@@ -104,7 +105,7 @@ int main()
 {
 	char *str;
 	str = malloc(1000);
-	int i = 0;
+	int i = -2147483648;
 	str = ft_itoa(i);
-	printf("%s\n", str);
+	printf("stryedönüsen:%s\n", str);
 }
