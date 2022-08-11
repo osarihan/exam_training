@@ -6,7 +6,7 @@
 /*   By: osarihan <osarihan@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 23:35:43 by osarihan          #+#    #+#             */
-/*   Updated: 2022/08/10 16:12:38 by osarihan         ###   ########.fr       */
+/*   Updated: 2022/08/11 13:24:18 by osarihan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ $
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-//BOZUK !!!!!!!!!!!!!!
+
 int is_prime(int nbr)
 {
 	int i;
@@ -68,7 +68,7 @@ int is_prime(int nbr)
 }
 void star()
 {
-	printf("*\n");
+	printf("*");
 }
 int main(int ac, char **av)
 {
@@ -77,11 +77,13 @@ int main(int ac, char **av)
 	int prm;
 	int count;
 	int tmp;
+	int yen;
 
 	prm = 2;
 	tmp = 0;
 	count = 0;
 	nbr = atoi(&av[1][i]);
+	yen = 1;
 	while(prm <= nbr)
 	{
 		if (is_prime(prm) == 1)
@@ -95,14 +97,13 @@ int main(int ac, char **av)
 			while (count > 0)
 			{
 				count--;
-				//printf("tmp:%d\n", tmp);
-				//printf("nbr:%d\n", nbr);
-				//printf("prm:%d", prm);			
-				printf("%d\n", prm);
-				printf("count:%d", count);
-				star();
+				if (yen == 0)
+					star();
+				printf("%d", prm);
+				yen = 0;
 			}
 		}
 		prm++;
 	}
+	printf("\n");
 }
