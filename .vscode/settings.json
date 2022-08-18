@@ -1,6 +1,7 @@
 {
 	"C_Cpp.errorSquiggles": "Disabled",
 	"files.associations": {
-		"ft_list.h": "c"
+		"ft_list.h": "c",
+		"ostream": "c"
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: osarihan <osarihan@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 12:47:15 by osarihan          #+#    #+#             */
-/*   Updated: 2022/08/10 16:13:58 by osarihan         ###   ########.fr       */
+/*   Updated: 2022/08/11 13:31:04 by osarihan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,12 +96,23 @@ char **ft_split(char *str)
 		k++;
 	}
 	return(dst);
-} 
-int main()
+}
+
+int main(int ac, char **av)
 {
-	char *src = "bir eylul aksami";
-	char **str;
-	str = malloc(sizeof(char **) * 1000);
-	str = ft_split(src);
-	printf("%s\n", &str[2][0]);
+	int i = 0;
+	int j = 0;
+	int k = 0;
+	char **as;
+	char *new;
+	as = malloc(sizeof(char **) * 1000);
+	new = malloc(sizeof(char *) * 1000);
+	as = ft_split(&av[1][0]);
+	if (ac == 2)
+	{
+		while (av[1][i] != '\0')
+		{
+			new[i] = as[]
+		}
+	}
 }

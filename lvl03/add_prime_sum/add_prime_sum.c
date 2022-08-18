@@ -6,7 +6,7 @@
 /*   By: osarihan <osarihan@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 00:00:02 by osarihan          #+#    #+#             */
-/*   Updated: 2022/08/10 16:16:02 by osarihan         ###   ########.fr       */
+/*   Updated: 2022/08/11 15:45:19 by osarihan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,23 +39,6 @@ $>
 
 */
 #include <unistd.h>
-
-int is_prime(int nbr)
-{
-	int i;
-
-	i = 2;
-	if (nbr == 1)
-		return(0);
-	while (i < nbr)
-	{
-		if (nbr % i == 0)
-			return (0);
-		else
-			i++;
-	}
-	return(1);
-}
 
 int ft_atoi(char *av)
 {
@@ -94,6 +77,23 @@ void	ft_putnbr(int nbr)
 		tmp = nbr + 48;
 		write(1, &tmp, 1);
 	}
+}
+
+int is_prime(int nbr)
+{
+	int i;
+
+	i = 2;
+	if (nbr == 1)
+		return(0);
+	while (i < nbr)
+	{
+		if (nbr % i == 0)
+			return (0);
+		else
+			i++;
+	}
+	return(1);
 }
 
 int main(int ac, char **av)

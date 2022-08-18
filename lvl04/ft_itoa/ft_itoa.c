@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itao.c                                          :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: osarihan <osarihan@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 16:45:55 by osarihan          #+#    #+#             */
-/*   Updated: 2022/08/10 17:59:42 by osarihan         ###   ########.fr       */
+/*   Updated: 2022/08/12 13:06:12 by osarihan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ int find_bas(int number, int line)
 	int turn;
 	
 	turn = ((number / (take_power_ten(line - 1))) % 10);
-	line--;
 	return(turn);
 }
 
@@ -105,7 +104,7 @@ int main()
 {
 	char *str;
 	str = malloc(1000);
-	int i = -2147483648;
+	int i = -2322;
 	str = ft_itoa(i);
 	printf("stryedönüsen:%s\n", str);
 }
