@@ -1,0 +1,1 @@
+normal get_next_line BUFFER_SIZE yok sadece
