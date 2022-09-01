@@ -1,19 +1,8 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   gnl.c                                              :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: osarihan <osarihan@student.42kocaeli.co    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/01 01:32:59 by osarihan          #+#    #+#             */
-/*   Updated: 2022/09/01 01:33:00 by osarihan         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include <unistd.h>
 #include <stdlib.h>
 #include <fcntl.h>
 #include <stdio.h>
+
 
 char *gnl(int fd){
 	char *c;
@@ -23,24 +12,27 @@ char *gnl(int fd){
 	c = malloc(sizeof(char *) * 100000);
 	char *asd;
 	asd = c;
-	while (i = read(fd, &a, 1) > 0 &&  a != '\n')
+	while ((i = read(fd, &a, 1) > 0) &&  a != '\n')
 	{
 		*c = a;
-		*c++;
+		c++;
 	}
+	*c = '\n';
+	c++;
 	*c = '\0';
 	return(asd);
 }
 
-int main(void)
+int main()
 {
 	char *line;
-	int fd;
-	fd = open("ouz.txt", O_RDONLY);
+	int fd = open("ouz.txt", O_RDONLY);
 	line = gnl(fd);
-	printf("%s\n", line);
+	printf("%s", line);
 	line = gnl(fd);
-	printf("%s\n", line);
+	printf("%s", line);
 	line = gnl(fd);
-	printf("%s\n", line);
+	printf("%s", line);
+	line = gnl(fd);
+	printf("%s", line);
 }
